@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:quotes_app/helper/db_helper_class.dart';
+import 'package:quotes_app/helper/splash_screens_helper.dart';
+import 'package:quotes_app/views/screens/splash_screens.dart';
 
+import 'views/screens/create_quotes.dart';
 import 'views/screens/favorites_page.dart';
+import 'views/screens/history_page.dart';
 import 'views/screens/home_page.dart';
 import 'views/screens/search_page.dart';
 
@@ -29,7 +32,9 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: "/",
-          page: () => HomePage(),
+          page: () => SplashScreenHelper.splashscreenHelper.checkFirstTime
+              ? const SplashScreens()
+              : HomePage(),
         ),
         GetPage(
           name: "/SearchPage",
@@ -38,6 +43,14 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: "/FavoritesPage",
           page: () => FavoritesPage(),
+        ),
+        GetPage(
+          name: "/QuotesCreatePage",
+          page: () => QuotesCreatePage(),
+        ),
+        GetPage(
+          name: "/HistoryPage",
+          page: () => HistoryPage(),
         ),
       ],
     );

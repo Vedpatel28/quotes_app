@@ -38,6 +38,9 @@ dependencies:
   get:
   path:
   google_fonts:
+  get_storage:
+  animated_splash_screen:
+  flutter_spinkit:
   sqflite: 
 
 dev_dependencies:

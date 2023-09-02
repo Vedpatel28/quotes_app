@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FavoritesPage extends StatelessWidget {
-  const FavoritesPage({super.key});
+class QuotesCreatePage extends StatelessWidget {
+  const QuotesCreatePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class FavoritesPage extends StatelessWidget {
           ),
         ),
         title: Text(
-          "Favorites",
+          "Create Quotes",
           style: GoogleFonts.federo(),
         ),
       ),
