@@ -7,7 +7,7 @@ class SplashScreenHelper {
 
   GetStorage storage = GetStorage();
 
-  String _check = 'first';
+  final String _check = 'first';
 
   get checkFirstTime {
     return storage.read(_check) ?? true;

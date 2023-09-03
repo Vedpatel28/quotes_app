@@ -11,7 +11,6 @@ class SplashScreens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SplashScreenHelper.splashscreenHelper.doneFirst();
-    print(SplashScreenHelper.splashscreenHelper.doneFirst());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -27,7 +26,7 @@ class SplashScreens extends StatelessWidget {
                 height: 300,
                 child: AnimatedSplashScreen(
                   splash: Transform.scale(
-                    scale: 1.5,
+                    scale: 1.7,
                     child: SpinKitWaveSpinner(
                       size: 200,
                       color: Colors.indigo.withOpacity(0.5),

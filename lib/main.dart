@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:quotes_app/helper/db_helper_class.dart';
 import 'package:quotes_app/helper/splash_screens_helper.dart';
 import 'package:quotes_app/views/screens/splash_screens.dart';
-
 import 'views/screens/create_quotes.dart';
 import 'views/screens/favorites_page.dart';
 import 'views/screens/history_page.dart';
@@ -21,7 +20,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(

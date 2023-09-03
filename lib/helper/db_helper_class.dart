@@ -1,7 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'dart:developer';
-import 'dart:ui';
 
 import 'package:path/path.dart';
 import 'package:quotes_app/modals/quotes_modals.dart';
@@ -28,6 +27,7 @@ class DBHelper {
 
     database = await openDatabase(
       finalPath,
+      version: 1,
       onCreate: (db, version) {
         db
             .execute(
