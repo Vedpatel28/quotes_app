@@ -3,15 +3,15 @@ class QuotesFavoriteModals {
   late String quotes;
   late String category;
 
-  QuotesFavoriteModals(
-      this.quotes,
-      this.category,
-      );
+  QuotesFavoriteModals({
+    required this.quotes,
+    required this.category,
+  });
 
   factory QuotesFavoriteModals.fromMap({required Map data}) {
     return QuotesFavoriteModals(
-      data['quotes'],
-      data['category'],
+      quotes: data['quotes'],
+      category: data['category'],
     );
   }
 }

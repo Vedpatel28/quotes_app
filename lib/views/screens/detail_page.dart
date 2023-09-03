@@ -1,9 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotes_app/helper/db_helper_class.dart';
+import 'package:quotes_app/helper/favorites_page_controller.dart';
 import 'package:quotes_app/modals/api_modal.dart';
-import 'package:quotes_app/modals/favorite_table_model.dart';
 import 'package:quotes_app/utils/image_utils.dart';
 
 class DetailPage extends StatefulWidget {
@@ -17,6 +19,10 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
   late AnimationController controller;
 
   late Animation<Alignment> position;
+
+  final FavoritesController _favoritesController = Get.put(
+    FavoritesController(),
+  );
 
   @override
   void initState() {
@@ -78,6 +84,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                 AlignTransition(
                   alignment: position,
                   child: Container(
+                    width: double.infinity,
                     padding: const EdgeInsets.all(30),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(18),
@@ -101,10 +108,20 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                   offset: const Offset(295, 5),
                   child: IconButton(
                     onPressed: () {
+                      log(" == ${allQuotes.category}  ==  +");
+
                       DBHelper.dbHelper.insertLikeQuotes(
                         quotes: allQuotes.quote,
                         category: allQuotes.category,
                       );
+
+                      log(" == ${allQuotes.quote}  ==  +");
+                      Get.snackbar("Successful", "Added To Favorites");
+                      Get.toNamed(
+                        "/FavoritesPage",
+                      );
+
+                      _favoritesController.getAllFavoritesQuotes;
                     },
                     icon: Icon(
                       Icons.favorite_border_outlined,

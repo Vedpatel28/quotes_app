@@ -27,7 +27,7 @@ class DBHelper {
 
   initDB() async {
     String dbPath = await getDatabasesPath();
-    String dbName = "QT.db";
+    String dbName = "QT1.db";
 
     String finalPath = join(dbPath, dbName);
 
@@ -69,9 +69,7 @@ class DBHelper {
 
     List args = [quotes, category];
 
-    int Quotes = await database.rawInsert(query, args);
-
-    return Quotes;
+    database.rawInsert(query, args);
   }
 
   displayQuotes() async {
@@ -85,13 +83,12 @@ class DBHelper {
     return allQuotes;
   }
 
-  displayLikeQuotes() async {
+  Future<List<QuotesFavoriteModals>> displayLikeQuotes() async {
     String query = "SELECT * FROM $quotesLikeTable ";
 
     List quotes = await database.rawQuery(query);
 
-    List<QuotesFavoriteModals> allQuotes =
-        quotes.map((e) => QuotesFavoriteModals.fromMap(data: e)).toList();
+    List<QuotesFavoriteModals> allQuotes = quotes.map((e) => QuotesFavoriteModals.fromMap(data: e)).toList();
 
     return allQuotes;
   }
