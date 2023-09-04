@@ -103,9 +103,9 @@ class DBHelper {
   }
 
   Future<List<QuotesModals>> SearchTransaction(
-      {required String remarks}) async {
+      {required String quotes}) async {
     String query =
-        'SELECT * FROM $quotesTable WHERE $qtCategory LIKE "%$remarks%"';
+        'SELECT * FROM $quotesTable WHERE $qtCategory LIKE "%$quotes%"';
 
     List search = await database.rawQuery(query);
 

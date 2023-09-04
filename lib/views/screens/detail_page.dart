@@ -115,7 +115,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                   ),
                 ),
                 Transform.translate(
-                  offset: const Offset(340, 5),
+                  offset: const Offset(330, 5),
                   child: IconButton(
                     onPressed: () {
                       log(" == ${allQuotes.category}  ==  +");
