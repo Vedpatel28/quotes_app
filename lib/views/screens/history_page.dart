@@ -22,6 +22,10 @@ class HistoryPage extends StatelessWidget {
           style: GoogleFonts.federo(),
         ),
       ),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+
+      ),
     );
   }
 }

@@ -113,8 +113,10 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                       DBHelper.dbHelper.insertLikeQuotes(
                         quotes: allQuotes.quote,
                         category: allQuotes.category,
+                        author: allQuotes.author,
                       );
 
+                      _favoritesController.getAllFavoritesQuotes;
                       log(" == ${allQuotes.quote}  ==  +");
                       Get.snackbar("Successful", "Added To Favorites");
                       Get.toNamed(

@@ -19,12 +19,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   ApiController apiController = Get.put(ApiController());
 
   late AnimationController controller;
-  late AnimationController centerController;
-
-  late Animation<Alignment> stopPosition;
-
   late Animation<Alignment> position;
-  late Animation<double> opacity;
 
   @override
   void initState() {
@@ -35,16 +30,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       duration: const Duration(milliseconds: 1200),
     )..forward();
 
-    centerController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1000),
-    )..forward();
-
-    stopPosition = Tween(
-      begin: const Alignment(0, 200),
-      end: Alignment.center,
-    ).animate(centerController);
-
     position = Tween<Alignment>(
       begin: const Alignment(-3, -2),
       end: const Alignment(-1.8, -1.1),
@@ -54,18 +39,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         curve: const Interval(0.1, 0.4),
       ),
     );
-
-    opacity = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(
-      CurvedAnimation(
-        parent: controller,
-        curve: const Interval(0.5, 1),
-      ),
-    );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +50,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,
-
         actions: [
           IconButton(
             onPressed: () {
@@ -101,7 +74,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         child: Stack(
           children: [
             Transform.translate(
-              offset: const Offset(100, 0),
+              offset: const Offset(150, 0),
               child: AlignTransition(
                 alignment: position,
                 child: AnimatedContainer(
@@ -120,26 +93,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ),
               ),
             ),
-            // Transform.translate(
-            //   offset: const Offset(300, 600),
-            //   child: FadeTransition(
-            //     opacity: opacity,
-            //     child: AnimatedContainer(
-            //       height: 180,
-            //       width: 200,
-            //       curve: Curves.easeInOutQuad,
-            //       duration: const Duration(seconds: 1),
-            //       decoration: const BoxDecoration(
-            //         // color: const Color(0xFFE4979E),
-            //         image: DecorationImage(
-            //           image: AssetImage("assets/bg_gif_image/giphy.gif"),
-            //           fit: BoxFit.fill,
-            //         ),
-            //         shape: BoxShape.circle,
-            //       ),
-            //     ),
-            //   ),
-            // ),
             Transform.translate(
               offset: const Offset(0, 110),
               child: Container(
@@ -161,8 +114,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 DBHelper.dbHelper.insertQuotes(
                                   quotes: allQuotes.quote,
                                   category: allQuotes.category,
+                                  author: allQuotes.author,
                                 );
-                                Get.toNamed("/DetailPage",arguments: allQuotes,);
+                                Get.snackbar(
+                                  "Successful",
+                                  "Added To History Page",
+                                );
+
+                                Get.toNamed(
+                                  "/DetailPage",
+                                  arguments: allQuotes,
+                                );
                               },
                               child: Container(
                                 padding: const EdgeInsets.all(18),

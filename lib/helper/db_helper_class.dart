@@ -20,10 +20,12 @@ class DBHelper {
   String qtId = "Id";
   String qtQuotes = "Quotes";
   String qtCategory = "Category";
+  String qtAuthor = "Author";
 
   String qtLId = "FaId";
   String qtLQuotes = "FaQuotes";
   String qtLCategory = "FaCategory";
+  String qtLAuthor = "FaAuthor";
 
   initDB() async {
     String dbPath = await getDatabasesPath();
@@ -37,14 +39,14 @@ class DBHelper {
       onCreate: (db, version) {
         db
             .execute(
-                'CREATE TABLE $quotesTable ( $qtId INTEGER PRIMARY KEY AUTOINCREMENT , $qtQuotes TEXT , $qtCategory TEXT ) ')
+                'CREATE TABLE $quotesTable ( $qtId INTEGER PRIMARY KEY AUTOINCREMENT , $qtQuotes TEXT , $qtCategory TEXT , $qtAuthor TEXT ) ')
             .then(
               (value) => log("Quotes Table are Created : DONE "),
             );
 
         db
             .execute(
-                'CREATE TABLE $quotesLikeTable ( $qtLId INTEGER PRIMARY KEY AUTOINCREMENT , $qtLQuotes TEXT , $qtLCategory TEXT ) ')
+                'CREATE TABLE $quotesLikeTable ( $qtLId INTEGER PRIMARY KEY AUTOINCREMENT , $qtLQuotes TEXT , $qtLCategory TEXT , $qtLAuthor TEXT ) ')
             .then(
               (value) => log("Favorite Table are Created : DONE "),
             );
@@ -52,22 +54,28 @@ class DBHelper {
     );
   }
 
-  insertQuotes({required String quotes, required String category}) async {
+  insertQuotes(
+      {required String quotes,
+      required String category,
+      required String author}) async {
     String query =
-        " INSERT INTO $quotesTable($qtQuotes,$qtCategory) VALUES( ? , ? ) ";
+        " INSERT INTO $quotesTable($qtQuotes,$qtCategory) VALUES( ? , ? , ? ) ";
 
-    List args = [quotes, category];
+    List args = [quotes, category, author];
 
     int Quotes = await database.rawInsert(query, args);
 
     return Quotes;
   }
 
-  insertLikeQuotes({required String quotes, required String category}) async {
+  insertLikeQuotes(
+      {required String quotes,
+      required String category,
+      required String author}) async {
     String query =
-        " INSERT INTO $quotesLikeTable($qtLQuotes,$qtLCategory) VALUES( ? , ? ) ";
+        " INSERT INTO $quotesLikeTable($qtLQuotes,$qtLCategory) VALUES( ? , ? , ? ) ";
 
-    List args = [quotes, category];
+    List args = [quotes, category, author];
 
     database.rawInsert(query, args);
   }
@@ -88,7 +96,8 @@ class DBHelper {
 
     List quotes = await database.rawQuery(query);
 
-    List<QuotesFavoriteModals> allQuotes = quotes.map((e) => QuotesFavoriteModals.fromMap(data: e)).toList();
+    List<QuotesFavoriteModals> allQuotes =
+        quotes.map((e) => QuotesFavoriteModals.fromMap(data: e)).toList();
 
     return allQuotes;
   }
