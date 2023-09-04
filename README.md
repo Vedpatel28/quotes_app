@@ -19,6 +19,7 @@ engage with uplifting quotes that resonate with them.
 <img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/0ff54eaf-3dad-4c8f-aa81-48c907830bf0" height = "400"></img>
 <img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/90fd92f2-388b-407a-b80e-9abbf5ad263b" height = "400"></img>
 <img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/0ff7da36-f5d7-47b8-aefe-318fc8b23fcc" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/206afa20-a83e-4fb2-bb6e-283edc72a450" height = "400"></img>
 
 ### Project Objectives:
 
