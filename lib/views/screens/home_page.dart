@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotes_app/controller/api_controller.dart';
+import 'package:quotes_app/controller/favorites_page_controller.dart';
+import 'package:quotes_app/controller/quotes_Controller.dart';
 import 'package:quotes_app/helper/api_helper_class.dart';
 import 'package:quotes_app/helper/db_helper_class.dart';
 import 'package:quotes_app/modals/api_modal.dart';
@@ -17,6 +19,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   ApiController apiController = Get.put(ApiController());
+
+  final FavoritesController _favoritesController = Get.put(
+    FavoritesController(),
+  );
+
+  final QuotesController _quotesController = Get.put(QuotesController());
 
   late AnimationController controller;
   late Animation<Alignment> position;
@@ -61,6 +69,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
           IconButton(
             onPressed: () {
+              _favoritesController.getAllFavoritesQuotes;
               Get.toNamed('/FavoritesPage');
             },
             icon: const Icon(
@@ -116,6 +125,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   category: allQuotes.category,
                                   author: allQuotes.author,
                                 );
+                                _quotesController.getAllHistoryQuotes;
                                 Get.snackbar(
                                   "Successful",
                                   "Added To History Page",

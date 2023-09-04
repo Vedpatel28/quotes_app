@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotes_app/helper/db_helper_class.dart';
-import 'package:quotes_app/helper/favorites_page_controller.dart';
+import 'package:quotes_app/controller/favorites_page_controller.dart';
 import 'package:quotes_app/modals/api_modal.dart';
 import 'package:quotes_app/utils/image_utils.dart';
 
@@ -20,8 +20,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
 
   late Animation<Alignment> position;
 
-  final FavoritesController _favoritesController = Get.put(
-    FavoritesController(),
+  final FavoritesController _favoritesController = Get.find(
   );
 
   @override
@@ -62,6 +61,14 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
           "Quotes Details",
           style: GoogleFonts.federo(),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Get.toNamed('/HistoryPage');
+            },
+            icon: const Icon(Icons.history_outlined),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),
@@ -94,18 +101,21 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    child: Text(
-                      allQuotes.quote,
-                      style: GoogleFonts.federo(
-                        fontSize: 20,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
+                    child: AlignTransition(
+                      alignment: position,
+                      child: Text(
+                        allQuotes.quote,
+                        style: GoogleFonts.federo(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
                 ),
                 Transform.translate(
-                  offset: const Offset(295, 5),
+                  offset: const Offset(340, 5),
                   child: IconButton(
                     onPressed: () {
                       log(" == ${allQuotes.category}  ==  +");

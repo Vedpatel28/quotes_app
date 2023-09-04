@@ -26,7 +26,7 @@ class SplashScreens extends StatelessWidget {
                 height: 300,
                 child: AnimatedSplashScreen(
                   splash: Transform.scale(
-                    scale: 1.7,
+                    scale: 5,
                     child: SpinKitWaveSpinner(
                       size: 200,
                       color: Colors.indigo.withOpacity(0.5),

@@ -80,7 +80,7 @@ class DBHelper {
     database.rawInsert(query, args);
   }
 
-  displayQuotes() async {
+  Future<List<QuotesModals>?> displayQuotes() async {
     String query = "SELECT * FROM $quotesTable ";
 
     List quotes = await database.rawQuery(query);

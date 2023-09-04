@@ -22,6 +22,19 @@ class SearchPage extends StatelessWidget {
           style: GoogleFonts.federo(),
         ),
       ),
+      body: Column(
+        children: [
+          TextField(
+            onChanged: (value) {
+
+            },
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: "Search",
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
