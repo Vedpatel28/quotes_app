@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -94,17 +93,64 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
               ),
               child: Column(
                 children: [
+                  SizedBox(height: s.height * 0.02),
                   Container(
-                    height: 100,
+                    height: 70,
                     width: 100,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                          "${bgImagePath}quotation angle.png",
-                        ),fit: BoxFit.cover,
+                          "${bgImagePath}white quotation.png",
+                        ),
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
+                  SizedBox(height: s.height * 0.05),
+                  Container(
+                    margin: const EdgeInsets.all(12),
+                    child: Text(
+                      allQuotes.quote,
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.viaodaLibre(
+                        fontSize: 28,
+                        wordSpacing: 2,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                  Container(
+                    margin: const EdgeInsets.all(12),
+                    child: Text(
+                      "- ${allQuotes.author}",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.viaodaLibre(
+                        fontSize: 26,
+                        wordSpacing: 1,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                  Row(
+                    children: [
+                      // IconButton(
+                      //   onPressed: () {
+                      //     Share.share(
+                      //       allQuotes.quote,
+                      //       subject: allQuotes.author,
+                      //     );
+                      //   },
+                      //   icon: const Icon(
+                      //     Icons.share_outlined,
+                      //   ),
+                      // ),
+                    ],
+                  ),
+                  const Spacer(),
                 ],
               ),
             ),
