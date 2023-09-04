@@ -13,6 +13,18 @@ detailed quote screens, random background images and font families, quote wallpa
 and setting device wallpapers, the app offers a comprehensive solution for users to discover and
 engage with uplifting quotes that resonate with them.
 
+
+https://github.com/Vedpatel28/quotes_app/assets/130833918/17aa1af7-3171-4ae4-b9e0-da83e67332f2
+
+
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/90fc7454-a130-4c0b-9982-85aaf6494c7d" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/662722a5-95ca-4c75-b66e-b7e8784298aa" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/4b2c3253-e945-44b4-9732-2d4e96934f2d" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/0ff54eaf-3dad-4c8f-aa81-48c907830bf0" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/90fd92f2-388b-407a-b80e-9abbf5ad263b" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/0ff7da36-f5d7-47b8-aefe-318fc8b23fcc" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/206afa20-a83e-4fb2-bb6e-283edc72a450" height = "400"></img>
+
 ### Project Objectives:
 
 SQLite Database: The app utilizes SQLite Database to efficiently store and manage the quotes.
