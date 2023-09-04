@@ -126,10 +126,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   author: allQuotes.author,
                                 );
                                 _quotesController.getAllHistoryQuotes;
-                                Get.snackbar(
-                                  "Successful",
-                                  "Added To History Page",
-                                );
 
                                 Get.toNamed(
                                   "/DetailPage",

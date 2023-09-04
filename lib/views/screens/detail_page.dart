@@ -1,9 +1,7 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quotes_app/helper/db_helper_class.dart';
 import 'package:quotes_app/controller/favorites_page_controller.dart';
 import 'package:quotes_app/modals/api_modal.dart';
 import 'package:quotes_app/utils/image_utils.dart';
@@ -20,8 +18,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
 
   late Animation<Alignment> position;
 
-  final FavoritesController _favoritesController = Get.find(
-  );
+  final FavoritesController _favoritesController = Get.find();
 
   @override
   void initState() {
@@ -45,6 +42,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    Size s = MediaQuery.of(context).size;
     ApiModal allQuotes = ModalRoute.of(context)!.settings.arguments as ApiModal;
 
     return Scaffold(
@@ -61,6 +59,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
           "Quotes Details",
           style: GoogleFonts.federo(),
         ),
+        centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {
@@ -71,7 +70,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(22),
         child: Column(
           children: [
             Align(
@@ -79,70 +78,35 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
               child: Text(
                 allQuotes.category,
                 style: GoogleFonts.federo(
-                  fontSize: 20,
+                  fontSize: 24,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             const SizedBox(height: 12),
-            Stack(
-              children: [
-                AlignTransition(
-                  alignment: position,
-                  child: Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(30),
+            Container(
+              height: s.height * 0.8,
+              width: s.width,
+              decoration: BoxDecoration(
+                color: Colors.blueAccent.shade200,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    height: 100,
+                    width: 100,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(18),
                       image: DecorationImage(
-                        image:
-                            AssetImage("${bgImagePath}blurred background.jpg"),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: AlignTransition(
-                      alignment: position,
-                      child: Text(
-                        allQuotes.quote,
-                        style: GoogleFonts.federo(
-                          fontSize: 20,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        image: AssetImage(
+                          "${bgImagePath}quotation angle.png",
+                        ),fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                ),
-                Transform.translate(
-                  offset: const Offset(330, 5),
-                  child: IconButton(
-                    onPressed: () {
-                      log(" == ${allQuotes.category}  ==  +");
-
-                      DBHelper.dbHelper.insertLikeQuotes(
-                        quotes: allQuotes.quote,
-                        category: allQuotes.category,
-                        author: allQuotes.author,
-                      );
-
-                      _favoritesController.getAllFavoritesQuotes;
-                      log(" == ${allQuotes.quote}  ==  +");
-                      Get.snackbar("Successful", "Added To Favorites");
-                      Get.toNamed(
-                        "/FavoritesPage",
-                      );
-
-                      _favoritesController.getAllFavoritesQuotes;
-                    },
-                    icon: Icon(
-                      Icons.favorite_border_outlined,
-                      size: 30,
-                      color: Colors.redAccent.shade700,
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
