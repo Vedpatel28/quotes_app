@@ -29,7 +29,7 @@ class DBHelper {
 
   initDB() async {
     String dbPath = await getDatabasesPath();
-    String dbName = "QT1.db";
+    String dbName = "QT2.db";
 
     String finalPath = join(dbPath, dbName);
 
@@ -59,7 +59,7 @@ class DBHelper {
       required String category,
       required String author}) async {
     String query =
-        " INSERT INTO $quotesTable($qtQuotes,$qtCategory) VALUES( ? , ? , ? ) ";
+        " INSERT INTO $quotesTable($qtQuotes,$qtCategory,$qtAuthor) VALUES( ? , ? , ? ) ";
 
     List args = [quotes, category, author];
 
@@ -73,7 +73,7 @@ class DBHelper {
       required String category,
       required String author}) async {
     String query =
-        " INSERT INTO $quotesLikeTable($qtLQuotes,$qtLCategory) VALUES( ? , ? , ? ) ";
+        " INSERT INTO $quotesLikeTable($qtLQuotes,$qtLCategory,$qtLAuthor) VALUES( ? , ? , ? ) ";
 
     List args = [quotes, category, author];
 
