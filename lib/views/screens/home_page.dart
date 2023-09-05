@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_use_of_protected_member
+
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -11,7 +13,7 @@ import 'package:quotes_app/helper/db_helper_class.dart';
 import 'package:quotes_app/modals/api_modal.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -135,16 +137,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               child: Container(
                                 padding: const EdgeInsets.all(18),
                                 margin: const EdgeInsets.all(4),
-                                decoration: const BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey,
-                                      spreadRadius: 4,
-                                      blurRadius: 7,
-                                      offset: Offset(1, 0.2),
-                                    ),
-                                  ],
-                                  borderRadius: BorderRadius.all(
+                                decoration: BoxDecoration(
+                                  color: Colors.primaries[index % 18].shade50,
+                                  borderRadius: const BorderRadius.all(
                                     Radius.circular(12),
                                   ),
                                 ),
@@ -153,9 +148,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     Align(
                                       alignment: Alignment.topLeft,
                                       child: Text(
-                                        "${allQuotes.category} :",
+                                        "${allQuotes.category} \n",
                                         style: GoogleFonts.quattrocento(
                                           fontSize: 18,
+                                          letterSpacing: 2,
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),

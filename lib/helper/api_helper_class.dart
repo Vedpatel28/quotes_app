@@ -1,16 +1,21 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'dart:convert';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:quotes_app/controller/api_controller.dart';
 import 'package:quotes_app/modals/api_modal.dart';
 
 class ApiHelper {
-
   ApiHelper._();
+
   static final ApiHelper apiHelper = ApiHelper._();
 
   List<ApiModal> allQuotes = [];
-  final String api = "https://api.api-ninjas.com/v1/quotes?limit=20";
+  static ApiController apiController = Get.find();
+
+  final String api =
+      "https://api.api-ninjas.com/v1/quotes?limit=10&category=${apiController.category.value}";
 
   Future<List<ApiModal>?> getApi() async {
     http.Response res = await http.get(Uri.parse(api),
