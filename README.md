@@ -22,6 +22,8 @@ https://github.com/Vedpatel28/quotes_app/assets/130833918/17aa1af7-3171-4ae4-b9e
 <img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/4b2c3253-e945-44b4-9732-2d4e96934f2d" height = "400"></img>
 <img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/0ff54eaf-3dad-4c8f-aa81-48c907830bf0" height = "400"></img>
 <img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/90fd92f2-388b-407a-b80e-9abbf5ad263b" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/10c4a222-16ee-4198-b2b5-79df3f7d6b9a" height = "400"></img>
+
 <img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/0ff7da36-f5d7-47b8-aefe-318fc8b23fcc" height = "400"></img>
 <img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/206afa20-a83e-4fb2-bb6e-283edc72a450" height = "400"></img>
 
