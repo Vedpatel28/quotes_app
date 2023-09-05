@@ -135,19 +135,49 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               child: Container(
                                 padding: const EdgeInsets.all(18),
                                 margin: const EdgeInsets.all(4),
-                                decoration: BoxDecoration(
-                                  color: Colors.primaries[index % 18],
-                                  borderRadius: const BorderRadius.all(
+                                decoration: const BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey,
+                                      spreadRadius: 4,
+                                      blurRadius: 7,
+                                      offset: Offset(1, 0.2),
+                                    ),
+                                  ],
+                                  borderRadius: BorderRadius.all(
                                     Radius.circular(12),
                                   ),
                                 ),
-                                child: Text(
-                                  allQuotes.quote,
-                                  style: GoogleFonts.quattrocento(
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                  ),
+                                child: Column(
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.topLeft,
+                                      child: Text(
+                                        "${allQuotes.category} :",
+                                        style: GoogleFonts.quattrocento(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    Text(
+                                      allQuotes.quote,
+                                      style: GoogleFonts.quattrocento(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: Alignment.bottomRight,
+                                      child: Text(
+                                        "- ${allQuotes.author}",
+                                        style: GoogleFonts.quattrocento(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             );
