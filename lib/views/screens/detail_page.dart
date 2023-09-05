@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotes_app/controller/favorites_page_controller.dart';
+import 'package:quotes_app/helper/db_helper_class.dart';
 import 'package:quotes_app/modals/api_modal.dart';
 import 'package:quotes_app/utils/image_utils.dart';
+import 'package:share_extend/share_extend.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -85,7 +87,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
             ),
             const SizedBox(height: 12),
             Container(
-              height: s.height * 0.8,
+              // height: s.height * 0.8,
               width: s.width,
               decoration: BoxDecoration(
                 color: Colors.blueAccent.shade200,
@@ -113,44 +115,63 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                       allQuotes.quote,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.viaodaLibre(
-                        fontSize: 28,
+                        fontSize: 24,
                         wordSpacing: 2,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
                   ),
-                  const Spacer(),
                   Container(
                     margin: const EdgeInsets.all(12),
+                    alignment: Alignment.centerRight,
                     child: Text(
                       "- ${allQuotes.author}",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.viaodaLibre(
-                        fontSize: 26,
+                        fontSize: 22,
                         wordSpacing: 1,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
                   ),
-                  const Spacer(),
                   Row(
                     children: [
-                      // IconButton(
-                      //   onPressed: () {
-                      //     Share.share(
-                      //       allQuotes.quote,
-                      //       subject: allQuotes.author,
-                      //     );
-                      //   },
-                      //   icon: const Icon(
-                      //     Icons.share_outlined,
-                      //   ),
-                      // ),
+                      const Spacer(),
+                      IconButton(
+                        onPressed: () {
+                          ShareExtend.share(
+                            allQuotes.quote,
+                            allQuotes.category,
+                            extraText: allQuotes.author,
+                          );
+                        },
+                        icon: const Icon(
+                          color: Colors.white,
+                          size: 32,
+                          Icons.share_outlined,
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      IconButton(
+                        onPressed: () {
+                          DBHelper.dbHelper.insertLikeQuotes(
+                            quotes: allQuotes.quote,
+                            category: allQuotes.category,
+                            author: allQuotes.author,
+                          );
+                        },
+                        icon: const Icon(
+                          Icons.favorite_border,
+                          size: 32,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const Spacer(),
                     ],
                   ),
-                  const Spacer(),
+                  const SizedBox(height: 10),
                 ],
               ),
             ),

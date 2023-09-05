@@ -41,7 +41,8 @@ dependencies:
   get_storage:
   animated_splash_screen:
   flutter_spinkit:
-  share_plus: ^7.1.0
+  url_launcher_plus:
+  share_extend: ^2.0.0
   sqflite: 
 
 dev_dependencies:

@@ -27,55 +27,58 @@ class SearchPage extends StatelessWidget {
           style: GoogleFonts.federo(),
         ),
       ),
-      body: Column(
-        children: [
-          TextField(
-            onChanged: (value) {
-              _searchController.isSearch(
-                quotes: value,
-              );
-            },
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: "Search",
+      body: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          children: [
+            TextField(
+              onChanged: (value) {
+                _searchController.isSearch(
+                  quotes: value,
+                );
+              },
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "Search",
+              ),
             ),
-          ),
-          Expanded(
-            child: Obx(() => ListView.builder(
-                  itemCount: _searchController.search.value.length,
-                  itemBuilder: (context, index) {
-                    QuotesModals quotes = _searchController.search.value[index];
-                    return _searchController.search.value.isNotEmpty
-                        ? Container(
-                            width: double.infinity,
-                            margin: const EdgeInsets.all(8),
-                            padding: const EdgeInsets.all(30),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(28),
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "${bgImagePath}blurred background.jpg",
-                                 ),
-                                fit: BoxFit.fill,
+            Expanded(
+              child: Obx(() => ListView.builder(
+                    itemCount: _searchController.search.value.length,
+                    itemBuilder: (context, index) {
+                      QuotesModals quotes = _searchController.search.value[index];
+                      return _searchController.search.value.isNotEmpty
+                          ? Container(
+                              width: double.infinity,
+                              margin: const EdgeInsets.all(8),
+                              padding: const EdgeInsets.all(30),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(28),
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "${bgImagePath}blurred background.jpg",
+                                   ),
+                                  fit: BoxFit.fill,
+                                ),
                               ),
-                            ),
-                            child: Text(
-                              quotes.quotes,
-                              style: GoogleFonts.federo(
-                                fontSize: 22,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
+                              child: Text(
+                                quotes.quotes,
+                                style: GoogleFonts.federo(
+                                  fontSize: 22,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                          )
-                        : Text(
-                            "Not Fund Data",
-                            style: GoogleFonts.modernAntiqua(fontSize: 22),
-                          );
-                  },
-                )),
-          ),
-        ],
+                            )
+                          : Text(
+                              "Not Fund Data",
+                              style: GoogleFonts.modernAntiqua(fontSize: 22),
+                            );
+                    },
+                  )),
+            ),
+          ],
+        ),
       ),
     );
   }
