@@ -13,19 +13,16 @@ detailed quote screens, random background images and font families, quote wallpa
 and setting device wallpapers, the app offers a comprehensive solution for users to discover and
 engage with uplifting quotes that resonate with them.
 
+https://github.com/Vedpatel28/quotes_app/assets/130833918/37b4e8d9-a128-44bf-9664-4cf2ed4b964d
 
-https://github.com/Vedpatel28/quotes_app/assets/130833918/17aa1af7-3171-4ae4-b9e0-da83e67332f2
-
-
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/90fc7454-a130-4c0b-9982-85aaf6494c7d" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/662722a5-95ca-4c75-b66e-b7e8784298aa" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/4b2c3253-e945-44b4-9732-2d4e96934f2d" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/0ff54eaf-3dad-4c8f-aa81-48c907830bf0" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/90fd92f2-388b-407a-b80e-9abbf5ad263b" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/10c4a222-16ee-4198-b2b5-79df3f7d6b9a" height = "400"></img>
-
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/0ff7da36-f5d7-47b8-aefe-318fc8b23fcc" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/206afa20-a83e-4fb2-bb6e-283edc72a450" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/761c6a3c-9e86-4617-92af-c2b40ee45e70" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/a1e46766-a196-4a1a-be46-14b6b5ce521a" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/f7786163-92d6-4024-95f2-c6ac85abbb21" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/cdb6c04f-dd18-4075-861d-fb792f52461f" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/2d77ec35-5acb-41d5-b4e9-37de4883e28b" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/997454d9-9de0-407f-9a4d-5693a75621ab" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/4aaca6a4-c7f6-4e18-ad1f-5e028d77f26d" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/27ff3f22-7d15-441e-b5f1-1445c8be6437" height = "400"></img>
 
 ### Project Objectives:
 
