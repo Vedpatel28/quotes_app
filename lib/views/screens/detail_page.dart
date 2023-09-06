@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quotes_app/controller/favorites_page_controller.dart';
 import 'package:quotes_app/helper/db_helper_class.dart';
 import 'package:quotes_app/modals/api_modal.dart';
 import 'package:quotes_app/utils/image_utils.dart';
@@ -19,7 +18,6 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
 
   late Animation<Alignment> position;
 
-  final FavoritesController _favoritesController = Get.find();
 
   @override
   void initState() {
@@ -136,42 +134,83 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                       ),
                     ),
                   ),
+                  const SizedBox(height: 30),
                   Row(
                     children: [
                       const Spacer(),
-                      IconButton(
-                        onPressed: () {
-                          ShareExtend.share(
-                            allQuotes.quote,
-                            allQuotes.category,
-                            extraText: allQuotes.author,
-                          );
-                        },
-                        icon: const Icon(
-                          color: Colors.white,
-                          size: 32,
-                          Icons.share_outlined,
-                        ),
-                      ),
-                      const SizedBox(width: 20),
-                      IconButton(
-                        onPressed: () {
+                      GestureDetector(
+                        onTap: () {
                           DBHelper.dbHelper.insertLikeQuotes(
                             quotes: allQuotes.quote,
                             category: allQuotes.category,
                             author: allQuotes.author,
                           );
+                          Get.snackbar(
+                            "Tab To Go",
+                            "Favorites Quotes Added To Page...",
+                            onTap: (snack) {
+                              Get.toNamed("/FavoritesPage");
+                            },
+                            duration: const Duration(
+                              milliseconds: 700,
+                            ),
+                          );
                         },
-                        icon: const Icon(
-                          Icons.favorite_border,
-                          size: 32,
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white,
+                          ),
+                          alignment: Alignment.center,
+                          child: Icon(
+                            Icons.favorite_outlined,
+                            size: 28,
+                            color: Colors.redAccent.shade400,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: const BoxDecoration(
                           color: Colors.white,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(28),
+                          ),
+                        ),
+                        alignment: Alignment.center,
+                        child: GestureDetector(
+                          onTap: () {
+                            ShareExtend.share(
+                              allQuotes.quote,
+                              allQuotes.category,
+                              extraText: allQuotes.author,
+                            );
+                          },
+                          child: Row(
+                            children: [
+                              const Icon(
+                                color: Colors.black,
+                                size: 28,
+                                Icons.share_outlined,
+                              ),
+                              Text(
+                                "Share",
+                                style: GoogleFonts.quattrocento(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       const Spacer(),
                     ],
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 30),
                 ],
               ),
             ),

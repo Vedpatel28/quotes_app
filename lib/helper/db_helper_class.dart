@@ -29,7 +29,7 @@ class DBHelper {
 
   initDB() async {
     String dbPath = await getDatabasesPath();
-    String dbName = "QT2.db";
+    String dbName = "QTT.db";
 
     String finalPath = join(dbPath, dbName);
 
@@ -68,10 +68,11 @@ class DBHelper {
     return Quotes;
   }
 
-  insertLikeQuotes(
-      {required String quotes,
-      required String category,
-      required String author}) async {
+  insertLikeQuotes({
+    required String quotes,
+    required String category,
+    required String author,
+  }) async {
     String query =
         " INSERT INTO $quotesLikeTable($qtLQuotes,$qtLCategory,$qtLAuthor) VALUES( ? , ? , ? ) ";
 
@@ -102,8 +103,7 @@ class DBHelper {
     return allQuotes;
   }
 
-  Future<List<QuotesModals>> SearchTransaction(
-      {required String quotes}) async {
+  Future<List<QuotesModals>> SearchTransaction({required String quotes}) async {
     String query =
         'SELECT * FROM $quotesTable WHERE $qtCategory LIKE "%$quotes%"';
 

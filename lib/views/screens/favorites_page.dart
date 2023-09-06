@@ -1,11 +1,9 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotes_app/controller/favorites_page_controller.dart';
 import 'package:quotes_app/modals/favorite_table_model.dart';
-import 'package:quotes_app/utils/image_utils.dart';
 
 class FavoritesPage extends StatelessWidget {
   FavoritesPage({super.key});
@@ -43,31 +41,49 @@ class FavoritesPage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: _favoritesController.allFavoriteQuotes.value.length,
                 itemBuilder: (context, index) {
-                  log("++ [ ${_favoritesController.allFavoriteQuotes[index].quotes} ] ++");
                   QuotesFavoriteModals quotesFavoriteModals =
                       _favoritesController.allFavoriteQuotes[index];
-
-                  log("++ [ ${quotesFavoriteModals.quotes} ] ++");
-
                   return Container(
                     width: double.infinity,
                     margin: const EdgeInsets.all(8),
                     padding: const EdgeInsets.all(30),
                     decoration: BoxDecoration(
+                      color: Colors.redAccent.shade200,
                       borderRadius: BorderRadius.circular(18),
-                      image: DecorationImage(
-                        image:
-                            AssetImage("${bgImagePath}pngtree backdrops.jpg"),
-                        fit: BoxFit.cover,
-                      ),
                     ),
-                    child: Text(
-                      quotesFavoriteModals.quotes,
-                      style: GoogleFonts.federo(
-                        fontSize: 22,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "${quotesFavoriteModals.category} \n",
+                            style: GoogleFonts.quattrocento(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          quotesFavoriteModals.quotes,
+                          style: GoogleFonts.quattrocento(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: Text(
+                            "- ${quotesFavoriteModals.author}",
+                            style: GoogleFonts.quattrocento(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   );
                 },

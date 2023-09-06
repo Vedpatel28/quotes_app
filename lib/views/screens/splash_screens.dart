@@ -1,6 +1,5 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotes_app/helper/splash_screens_helper.dart';
 import 'package:quotes_app/views/screens/home_page.dart';
@@ -23,27 +22,26 @@ class SplashScreens extends StatelessWidget {
             children: [
               const SizedBox(height: 200),
               SizedBox(
-                height: 300,
+                height: 200,
                 child: AnimatedSplashScreen(
+                  backgroundColor: const Color(0xFFf9fcf7),
                   splash: Transform.scale(
                     scale: 2,
-                    child: SpinKitWaveSpinner(
-                      size: 200,
-                      color: Colors.indigo.withOpacity(0.5),
-                      waveColor: Colors.indigoAccent.withOpacity(0.2),
-                      trackColor: Colors.blue.withOpacity(0.3),
+                    child: Image.asset(
+                      "assets/bg_gif_image/hello.gif",
                     ),
                   ),
-                  nextScreen: HomePage(),
+                  nextScreen: const HomePage(),
                   duration: 3000,
                 ),
               ),
               Text(
                 "Welcome To Quotes App",
                 style: GoogleFonts.adventPro(
-                  textStyle: const TextStyle(
+                  textStyle: TextStyle(
                     fontSize: 25,
-                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue.shade400,
                   ),
                 ),
               ),
@@ -51,6 +49,7 @@ class SplashScreens extends StatelessWidget {
           ),
         ),
       ),
+      backgroundColor: const Color(0xFFf9fcf7),
     );
   }
 }
