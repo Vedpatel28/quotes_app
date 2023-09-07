@@ -14,7 +14,7 @@ class SplashScreens extends StatefulWidget {
 class _SplashScreensState extends State<SplashScreens> {
   @override
   Widget build(BuildContext context) {
-    SplashScreenHelper.splashscreenHelper.doneFirst();
+    IsSplashScreenHelper.splashscreenHelper.doneFirst();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -42,7 +42,10 @@ class _SplashScreensState extends State<SplashScreens> {
                       ),
                     ),
                     curve: Curves.bounceInOut,
-                    nextScreen: const HomePage(),
+                    nextScreen:
+                        IsSplashScreenHelper.splashscreenHelper.checkFirstTime
+                            ? const HomePage()
+                            : const SplashScreens(),
                     duration: 4000,
                   ),
                 ),

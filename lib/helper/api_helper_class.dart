@@ -20,13 +20,11 @@ class ApiHelper {
 
   Future<List<ApiModal>?> getApi() async {
     http.Response res = await http.get(Uri.parse(api),
-        headers: {'x-Api-Key': 'DjwHGf1zjhpHli2jwHHMuA==Z5kZFPiDVsrURbCx'});
+        headers: {'x-Api-Key': 'mqkCxGvWNd8ALLDdVfC0kVb2CTyJrJmGurVDEdPX'});
 
-
-      log("Response : ${res.statusCode}");
-
+    log("Response : ${res.statusCode}");
     if (res.statusCode == 200) {
-      log("$res");
+      log("Response : ${res.statusCode}");
       List quotes = jsonDecode(res.body);
       allQuotes = quotes.map((e) => ApiModal.fromApi(data: e)).toList();
       return allQuotes;

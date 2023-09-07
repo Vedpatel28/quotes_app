@@ -30,9 +30,9 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: "/",
-          page: () => SplashScreenHelper.splashscreenHelper.checkFirstTime
+          page: () => IsSplashScreenHelper.splashscreenHelper.checkFirstTime
               ? const SplashScreens()
-              : HomePage(),
+              : const HomePage(),
         ),
         GetPage(
           name: "/SearchPage",

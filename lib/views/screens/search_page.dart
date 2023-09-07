@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -58,56 +60,58 @@ class SearchPage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Expanded(
-              child: Obx(() => ListView.builder(
-                    itemCount: _searchController.search.value.length,
-                    itemBuilder: (context, index) {
-                      QuotesModals quotes =
-                          _searchController.search.value[index];
-                      return _searchController.search.value.isNotEmpty
-                          ? GestureDetector(
-                              onTap: () {
-                                DBHelper.dbHelper.insertQuotes(
-                                  quotes: quotes.quotes,
-                                  category: quotes.category,
-                                  author: quotes.author,
-                                );
-                                _quotesController.getAllHistoryQuotes;
+              child: Obx(
+                () => ListView.builder(
+                  itemCount: _searchController.search.value.length,
+                  itemBuilder: (context, index) {
+                    QuotesModals quotes = _searchController.search.value[index];
+                    log(" =- ${quotes.quotes} -= ");
+                    return _searchController.search.value.isNotEmpty
+                        ? GestureDetector(
+                            onTap: () {
+                              DBHelper.dbHelper.insertQuotes(
+                                quotes: quotes.quotes,
+                                category: quotes.category,
+                                author: quotes.author,
+                              );
+                              _quotesController.getAllHistoryQuotes;
 
-                                Get.toNamed(
-                                  "/DetailPage",
-                                  arguments: quotes,
-                                );
-                              },
-                              child: Container(
-                                width: double.infinity,
-                                margin: const EdgeInsets.all(8),
-                                padding: const EdgeInsets.all(30),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(28),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      "${bgImagePath}pngtree backdrops.jpg",
-                                    ),
-                                    fit: BoxFit.fill,
+                              Get.toNamed(
+                                "/DetailPage",
+                                arguments: quotes,
+                              );
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              margin: const EdgeInsets.all(8),
+                              padding: const EdgeInsets.all(30),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(28),
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "${bgImagePath}pngtree backdrops.jpg",
                                   ),
-                                ),
-                                child: Text(
-                                  quotes.quotes,
-                                  style: GoogleFonts.federo(
-                                    fontSize: 22,
-                                    color: Colors.black,
-                                  ),
+                                  fit: BoxFit.fill,
                                 ),
                               ),
-                            )
-                          : Center(
                               child: Text(
-                                "Not Fund Data",
-                                style: GoogleFonts.modernAntiqua(),
+                                quotes.quotes,
+                                style: GoogleFonts.federo(
+                                  fontSize: 22,
+                                  color: Colors.black,
+                                ),
                               ),
-                            );
-                    },
-                  )),
+                            ),
+                          )
+                        : Center(
+                            child: Text(
+                              "Not Fund Data",
+                              style: GoogleFonts.modernAntiqua(),
+                            ),
+                          );
+                  },
+                ),
+              ),
             ),
           ],
         ),

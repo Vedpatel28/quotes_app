@@ -113,7 +113,6 @@ class DBHelper {
 
     List<QuotesModals> allSearch =
         search.map((e) => QuotesModals.fromMap(data: e)).toList();
-
     return allSearch;
   }
 }

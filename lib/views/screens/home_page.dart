@@ -22,7 +22,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   ApiController apiController = Get.put(ApiController());
 
-  final FavoritesController _favoritesController = Get.put(FavoritesController(),);
+  final FavoritesController _favoritesController = Get.put(FavoritesController());
 
   final QuotesController _quotesController = Get.put(QuotesController());
 
@@ -105,8 +105,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   child: FutureBuilder(
                     future: ApiHelper.apiHelper.getApi(),
                     builder: (context, snapshot) {
+                      log("{] ${snapshot.data} [}");
                       if (snapshot.hasData) {
                         apiController.getData();
+                        log("${snapshot.data}");
                         return Obx(
                           () => ListView.builder(
                             itemCount: apiController.allData.value.length,
@@ -174,6 +176,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 ),
                               );
                             },
+                          ),
+                        );
+                      } else if (snapshot.hasError) {
+                        log(
+                          "${snapshot.error}",
+                        );
+                        return Center(
+                          child: Text(
+                            "Error : ${snapshot.error}",
+                            style: GoogleFonts.federo(
+                              fontSize: 20,
+                            ),
                           ),
                         );
                       } else {
