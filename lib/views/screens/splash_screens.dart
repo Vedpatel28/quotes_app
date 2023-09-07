@@ -4,9 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quotes_app/helper/splash_screens_helper.dart';
 import 'package:quotes_app/views/screens/home_page.dart';
 
-class SplashScreens extends StatelessWidget {
+class SplashScreens extends StatefulWidget {
   const SplashScreens({super.key});
 
+  @override
+  State<SplashScreens> createState() => _SplashScreensState();
+}
+
+class _SplashScreensState extends State<SplashScreens> {
   @override
   Widget build(BuildContext context) {
     SplashScreenHelper.splashscreenHelper.doneFirst();
@@ -23,25 +28,38 @@ class SplashScreens extends StatelessWidget {
               const SizedBox(height: 200),
               SizedBox(
                 height: 200,
-                child: AnimatedSplashScreen(
-                  backgroundColor: const Color(0xFFf9fcf7),
-                  splash: Transform.scale(
-                    scale: 2,
-                    child: Image.asset(
-                      "assets/bg_gif_image/hello.gif",
+                child: Hero(
+                  tag: 'E',
+                  child: AnimatedSplashScreen(
+                    animationDuration: const Duration(
+                      seconds: 1,
                     ),
+                    // backgroundColor: Colors.black87,
+                    splash: Transform.scale(
+                      scale: 2,
+                      child: Image.asset(
+                        "assets/bg_gif_image/Strong Quote.gif",
+                      ),
+                    ),
+                    curve: Curves.bounceInOut,
+                    nextScreen: const HomePage(),
+                    duration: 4000,
                   ),
-                  nextScreen: const HomePage(),
-                  duration: 3000,
                 ),
               ),
-              Text(
-                "Welcome To Quotes App",
-                style: GoogleFonts.adventPro(
-                  textStyle: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue.shade400,
+              SizedBox(
+                height: 200,
+                child: Hero(
+                  tag: 'f',
+                  child: Text(
+                    "Welcome To Quotes App",
+                    style: GoogleFonts.adventPro(
+                      textStyle: const TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.black,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -49,7 +67,6 @@ class SplashScreens extends StatelessWidget {
           ),
         ),
       ),
-      backgroundColor: const Color(0xFFf9fcf7),
     );
   }
 }

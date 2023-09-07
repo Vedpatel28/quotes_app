@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'dart:convert';
+import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:quotes_app/controller/api_controller.dart';
@@ -21,7 +22,11 @@ class ApiHelper {
     http.Response res = await http.get(Uri.parse(api),
         headers: {'x-Api-Key': 'DjwHGf1zjhpHli2jwHHMuA==Z5kZFPiDVsrURbCx'});
 
+
+      log("Response : ${res.statusCode}");
+
     if (res.statusCode == 200) {
+      log("$res");
       List quotes = jsonDecode(res.body);
       allQuotes = quotes.map((e) => ApiModal.fromApi(data: e)).toList();
       return allQuotes;

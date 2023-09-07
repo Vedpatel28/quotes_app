@@ -10,11 +10,12 @@ import 'package:quotes_app/utils/image_utils.dart';
 class HistoryPage extends StatelessWidget {
   HistoryPage({super.key});
 
-  final QuotesController _quotesController = Get.put(QuotesController(),);
+  final QuotesController _quotesController = Get.put(
+    QuotesController(),
+  );
 
   @override
   Widget build(BuildContext context) {
-
     Size s = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -27,13 +28,16 @@ class HistoryPage extends StatelessWidget {
             Icons.arrow_back_ios_new_outlined,
           ),
         ),
-        title: Text(
-          "History",
-          style: GoogleFonts.federo(),
+        title: Hero(
+          tag: 'h',
+          child: Text(
+            "History",
+            style: GoogleFonts.federo(),
+          ),
         ),
       ),
       body: Obx(
-            () => Column(
+        () => Column(
           children: [
             SizedBox(
               height: s.height * 0.9,
@@ -42,28 +46,31 @@ class HistoryPage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   log("++ [ ${_quotesController.allHistoryQuotes[index].quotes} ] ++");
                   QuotesModals quotesFavoriteModals =
-                  _quotesController.allHistoryQuotes[index];
-
+                      _quotesController.allHistoryQuotes[index];
                   log("++ [ ${quotesFavoriteModals.quotes} ] ++");
-
                   return Container(
                     width: double.infinity,
                     margin: const EdgeInsets.all(8),
-                    padding: const EdgeInsets.all(30),
+                    padding: const EdgeInsets.all(18),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(28),
+                      border: Border.all(
+                        color: Colors.primaries[index % 18].shade200,
+                        width: 10,
+                      ),
+                      borderRadius: BorderRadius.circular(20),
                       image: DecorationImage(
-                        image:
-                        AssetImage("${bgImagePath}blurred background.jpg"),
-                        fit: BoxFit.fill,
+                        image: AssetImage(
+                          "${bgImagePath}istockphoto.webp",
+                        ),
+                        fit: BoxFit.cover,
                       ),
                     ),
                     child: Text(
                       quotesFavoriteModals.quotes,
-                      style: GoogleFonts.federo(
+                      style: GoogleFonts.quattrocento(
                         fontSize: 22,
-                        color: Colors.black,
                         fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
                     ),
                   );
