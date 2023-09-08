@@ -108,7 +108,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       log("{] ${snapshot.data} [}");
                       if (snapshot.hasData) {
                         apiController.getData();
-                        log("${snapshot.data}");
                         return Obx(
                           () => ListView.builder(
                             itemCount: apiController.allData.value.length,
