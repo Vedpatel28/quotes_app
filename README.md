@@ -71,9 +71,8 @@ even set it as their device wallpaper.
 
 ### Project Technologies:
 - Dart language
-- Flutter framework with MVC and Provider architecture
-- Familiarity with the Flutter framework, SQLite DB, API Calling, Shared Preferences, and
-JSON parsing.
+- Flutter framework with MVC and Provider architecture.
+- Familiarity with the Flutter framework, SQLite DB, API Calling.
 
 ### Reference :
 
