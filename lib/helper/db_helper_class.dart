@@ -109,8 +109,6 @@ class DBHelper {
 
     List search = await database.rawQuery(query);
 
-    log("$search");
-
     List<QuotesModals> allSearch =
         search.map((e) => QuotesModals.fromMap(data: e)).toList();
     return allSearch;
