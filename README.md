@@ -13,10 +13,8 @@ detailed quote screens, random background images and font families, quote wallpa
 and setting device wallpapers, the app offers a comprehensive solution for users to discover and
 engage with uplifting quotes that resonate with them.
 
-https://github.com/Vedpatel28/quotes_app/assets/130833918/37b4e8d9-a128-44bf-9664-4cf2ed4b964d
-
 <img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/32fc524a-08ee-4775-81aa-2a03386417d1" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/a1e46766-a196-4a1a-be46-14b6b5ce521a" height = "400"></img>
+<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/3710d325-d513-4712-bfcd-dc30e91387c6" height = "400"></img>
 <img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/f7786163-92d6-4024-95f2-c6ac85abbb21" height = "400"></img>
 <img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/9d9483a1-151b-4c42-895a-24e2d065f65b" height = "400"></img>
 <img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/2d77ec35-5acb-41d5-b4e9-37de4883e28b" height = "400"></img>
