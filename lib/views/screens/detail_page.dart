@@ -40,8 +40,11 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+
     Size s = MediaQuery.of(context).size;
+
     ApiModal allQuotes = ModalRoute.of(context)!.settings.arguments as ApiModal;
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(

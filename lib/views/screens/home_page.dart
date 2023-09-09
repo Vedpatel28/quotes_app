@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
     position = Tween<Alignment>(
       begin: const Alignment(-3, -2),
-      end: const Alignment(-1.8, -1.1),
+      end: const Alignment(0, 0),
     ).animate(
       CurvedAnimation(
         parent: controller,
@@ -56,7 +56,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
         title: Hero(
           tag: 'E',
           transitionOnUserGestures: true,
@@ -90,13 +89,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ),
           ),
         ],
+        backgroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: Stack(
           children: [
             Transform.translate(
-              offset: const Offset(0, 110),
+              offset: const Offset(0, 18),
               child: AlignTransition(
                 alignment: position,
                 child: Container(

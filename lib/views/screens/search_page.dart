@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotes_app/controller/quotes_Controller.dart';
 import 'package:quotes_app/controller/search_controller.dart';
 import 'package:quotes_app/helper/db_helper_class.dart';
+import 'package:quotes_app/modals/api_modal.dart';
 import 'package:quotes_app/modals/quotes_modals.dart';
 import 'package:quotes_app/utils/image_utils.dart';
 
@@ -74,7 +74,8 @@ class SearchPage extends StatelessWidget {
                               );
                               _quotesController.getAllHistoryQuotes;
                               Get.toNamed(
-                                "/DetailPage",
+                                "/HistoryPage",
+                                arguments: ApiModal,
                               );
                             },
                             child: Container(
@@ -90,12 +91,26 @@ class SearchPage extends StatelessWidget {
                                   fit: BoxFit.fill,
                                 ),
                               ),
-                              child: Text(
-                                quotes.quotes,
-                                style: GoogleFonts.federo(
-                                  fontSize: 22,
-                                  color: Colors.black,
-                                ),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    quotes.quotes,
+                                    style: GoogleFonts.federo(
+                                      fontSize: 22,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  Align(
+                                    alignment: Alignment.bottomRight,
+                                    child: Text(
+                                      "- ${quotes.author}",
+                                      style: GoogleFonts.federo(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           )
