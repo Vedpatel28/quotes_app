@@ -6,7 +6,7 @@ such as SQLite Database, Animation, API Calling, and Local JSON Bank. The app pr
 users with a diverse collection of inspirational quotes, empowering them with personalized
 features and a visually appealing interface.
 
-..%2F..%2F..%2FDownloads%20All%20Frome%20Chrome%2FQuotes%20App.mp4
+
 
 "Quotes" aims to provide an immersive and personalized experience for users seeking inspiration
 and motivation. By incorporating SQLite Database, Animation, API Calling, Local JSON Bank,
