@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:get_storage/get_storage.dart';
 
 class IsSplashScreenHelper {
-  bool _isSplashScreens = false;
+  bool isSplashScreens = false;
   GetStorage storage = GetStorage();
 
   IsSplashScreenHelper._();
@@ -17,12 +17,12 @@ class IsSplashScreenHelper {
   final String _check = 'first';
 
   get checkFirstTime {
-    _isSplashScreens = storage.read(_check) ?? false;
-    return _isSplashScreens;
+    isSplashScreens = storage.read(_check) ?? false;
+    return isSplashScreens;
   }
 
   doneFirst() {
-    _isSplashScreens = true;
-    storage.write(_check, _isSplashScreens);
+    isSplashScreens = true;
+    storage.write(_check, isSplashScreens);
   }
 }

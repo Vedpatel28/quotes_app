@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               child: AlignTransition(
                 alignment: position,
                 child: Container(
-                  height: s.height * 0.82,
+                  height: s.height * 0.88,
                   margin: const EdgeInsets.all(6),
                   child: FutureBuilder(
                     future: ApiHelper.apiHelper.getApi(),

@@ -36,48 +36,50 @@ class HistoryPage extends StatelessWidget {
           ),
         ),
       ),
-      body: Obx(
-        () => Column(
-          children: [
-            SizedBox(
-              height: s.height * 0.9,
-              child: ListView.builder(
-                itemCount: _quotesController.allHistoryQuotes.value.length,
-                itemBuilder: (context, index) {
-                  log("++ [ ${_quotesController.allHistoryQuotes[index].quotes} ] ++");
-                  QuotesModals quotesFavoriteModals =
-                      _quotesController.allHistoryQuotes[index];
-                  log("++ [ ${quotesFavoriteModals.quotes} ] ++");
-                  return Container(
-                    width: double.infinity,
-                    margin: const EdgeInsets.all(8),
-                    padding: const EdgeInsets.all(18),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.primaries[index % 18].shade200,
-                        width: 10,
-                      ),
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
-                        image: AssetImage(
-                          "${bgImagePath}istockphoto.webp",
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Obx(
+          () => Column(
+            children: [
+              SizedBox(
+                height: s.height * 0.9,
+                child: ListView.builder(
+                  itemCount: _quotesController.allHistoryQuotes.value.length,
+                  itemBuilder: (context, index) {
+                    QuotesModals quotesFavoriteModals =
+                        _quotesController.allHistoryQuotes[index];
+                    log("++ [ ${quotesFavoriteModals.quotes} ] ++");
+                    return Container(
+                      width: double.infinity,
+                      margin: const EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(18),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.primaries[index % 18].shade200,
+                          width: 10,
                         ),
-                        fit: BoxFit.cover,
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "${bgImagePath}istockphoto.webp",
+                          ),
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      quotesFavoriteModals.quotes,
-                      style: GoogleFonts.quattrocento(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                      child: Text(
+                        quotesFavoriteModals.quotes,
+                        style: GoogleFonts.quattrocento(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
