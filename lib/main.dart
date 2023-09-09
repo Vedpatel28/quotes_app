@@ -7,12 +7,15 @@ import 'package:quotes_app/views/screens/splash_screens.dart';
 import 'views/screens/favorites_page.dart';
 import 'views/screens/history_page.dart';
 import 'views/screens/home_page.dart';
+import 'package:get_storage/get_storage.dart';
 import 'views/screens/search_page.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   DBHelper.dbHelper.initDB();
+
+  await GetStorage.init();
 
   runApp(const MyApp());
 }

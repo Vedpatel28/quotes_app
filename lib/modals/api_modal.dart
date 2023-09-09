@@ -1,20 +1,19 @@
 class ApiModal {
-  late int id;
-  late String quotes;
-  late String category;
-  late String author;
+  final String quote;
+  final String author;
+  final String category;
 
   ApiModal(
-    this.quotes,
+    this.quote,
     this.author,
     this.category,
   );
 
   factory ApiModal.fromApi({required Map data}) {
     return ApiModal(
-      data['Quotes'],
-      data['Category'],
-      data['Author'],
+      data['quote'],
+      data['author'],
+      data['category'],
     );
   }
 }

@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               return GestureDetector(
                                 onTap: () {
                                   DBHelper.dbHelper.insertQuotes(
-                                    quotes: allQuotes.quotes,
+                                    quotes: allQuotes.quote,
                                     category: allQuotes.category,
                                     author: allQuotes.author,
                                   );
@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           ),
                                         ),
                                         Text(
-                                          allQuotes.quotes,
+                                          allQuotes.quote,
                                           style: GoogleFonts.quattrocento(
                                             fontSize: 20,
                                             fontWeight: FontWeight.bold,
@@ -178,9 +178,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ),
                         );
                       } else if (snapshot.hasError) {
-                        log(
-                          "${snapshot.error}",
-                        );
                         return Center(
                           child: Text(
                             "Error : ${snapshot.error}",

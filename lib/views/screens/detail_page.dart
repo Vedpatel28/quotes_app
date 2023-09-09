@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotes_app/helper/db_helper_class.dart';
-import 'package:quotes_app/modals/quotes_modals.dart';
+import 'package:quotes_app/modals/api_modal.dart';
 import 'package:quotes_app/utils/image_utils.dart';
 import 'package:share_extend/share_extend.dart';
 
@@ -41,7 +41,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     Size s = MediaQuery.of(context).size;
-    QuotesModals allQuotes = ModalRoute.of(context)!.settings.arguments as QuotesModals;
+    ApiModal allQuotes = ModalRoute.of(context)!.settings.arguments as ApiModal;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -115,7 +115,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                       Container(
                         margin: const EdgeInsets.all(12),
                         child: Text(
-                          allQuotes.quotes,
+                          allQuotes.quote,
                           textAlign: TextAlign.center,
                           style: GoogleFonts.viaodaLibre(
                             fontSize: 24,
@@ -146,7 +146,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                           GestureDetector(
                             onTap: () {
                               DBHelper.dbHelper.insertLikeQuotes(
-                                quotes: allQuotes.quotes,
+                                quotes: allQuotes.quote,
                                 category: allQuotes.category,
                                 author: allQuotes.author,
                               );
@@ -188,8 +188,8 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                             child: GestureDetector(
                               onTap: () {
                                 ShareExtend.share(
-                                  allQuotes.quotes,
-                                  allQuotes.category,
+                                  allQuotes.quote,
+                                  'text',
                                   extraText: allQuotes.author,
                                 );
                               },

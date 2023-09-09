@@ -54,10 +54,11 @@ class DBHelper {
     );
   }
 
-  insertQuotes(
-      {required String quotes,
-      required String category,
-      required String author}) async {
+  insertQuotes({
+    required String quotes,
+    required String category,
+    required String author,
+  }) async {
     String query =
         " INSERT INTO $quotesTable($qtQuotes,$qtCategory,$qtAuthor) VALUES( ? , ? , ? ) ";
 

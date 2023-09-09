@@ -79,4 +79,5 @@ even set it as their device wallpaper.
 👉🏻 Quotes Api - https://api-ninjas.com/api/quotes 
  
 👉🏻 UI Reference - https://user-images.githubusercontent.com/67043376/238406301-4c446747-7550-4673-9503-10c5780bb4a2.png
- 
+
+[//]: # (https://github.com/Vedpatel28/quotes_app/assets/130833918/37b4e8d9-a128-44bf-9664-4cf2ed4b964d)

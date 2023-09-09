@@ -4,7 +4,7 @@ import 'package:quotes_app/modals/api_modal.dart';
 
 class ApiController extends GetxController {
   RxList allData = [].obs;
-  RxString category = "funny".obs;
+  RxString category = "".obs;
 
   List<ApiModal>? allQuotes;
 

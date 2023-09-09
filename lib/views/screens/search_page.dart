@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -65,7 +64,6 @@ class SearchPage extends StatelessWidget {
                   itemCount: _searchController.search.value.length,
                   itemBuilder: (context, index) {
                     QuotesModals quotes = _searchController.search.value[index];
-                    log(" =- ${quotes.quotes} -= ");
                     return _searchController.search.value.isNotEmpty
                         ? GestureDetector(
                             onTap: () {
@@ -75,10 +73,8 @@ class SearchPage extends StatelessWidget {
                                 author: quotes.author,
                               );
                               _quotesController.getAllHistoryQuotes;
-
                               Get.toNamed(
                                 "/DetailPage",
-                                arguments: quotes,
                               );
                             },
                             child: Container(
