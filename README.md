@@ -6,7 +6,7 @@ such as SQLite Database, Animation, API Calling, and Local JSON Bank. The app pr
 users with a diverse collection of inspirational quotes, empowering them with personalized
 features and a visually appealing interface.
 
-https://github.com/Vedpatel28/quotes_app/assets/130833918/6f400f5f-d493-4ab5-8e86-652608157e3b
+https://github.com/Vedpatel28/quotes_app/assets/130833918/f347f37b-ab61-4461-a336-bb14aad43b00
 
 "Quotes" aims to provide an immersive and personalized experience for users seeking inspiration
 and motivation. By incorporating SQLite Database, Animation, API Calling, Local JSON Bank,
