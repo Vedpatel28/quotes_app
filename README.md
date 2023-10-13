@@ -6,7 +6,7 @@ such as SQLite Database, Animation, API Calling, and Local JSON Bank. The app pr
 users with a diverse collection of inspirational quotes, empowering them with personalized
 features and a visually appealing interface.
 
-https://github.com/Vedpatel28/quotes_app/assets/130833918/2a17f6f8-0045-47d8-8be2-c63c43735c29
+https://github.com/Vedpatel28/quotes_app/assets/130833918/0f6a3a62-0a80-415d-8bfa-8cf74e28e762
 
 "Quotes" aims to provide an immersive and personalized experience for users seeking inspiration
 and motivation. By incorporating SQLite Database, Animation, API Calling, Local JSON Bank,
@@ -14,15 +14,6 @@ fetching and saving quotes, category-wise organization, light and dark themes, s
 detailed quote screens, random background images and font families, quote wallpaper creation,
 and setting device wallpapers, the app offers a comprehensive solution for users to discover and
 engage with uplifting quotes that resonate with them.
-
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/32fc524a-08ee-4775-81aa-2a03386417d1" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/3710d325-d513-4712-bfcd-dc30e91387c6" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/f7786163-92d6-4024-95f2-c6ac85abbb21" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/9d9483a1-151b-4c42-895a-24e2d065f65b" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/2d77ec35-5acb-41d5-b4e9-37de4883e28b" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/39b60575-976a-471f-a8bb-83a9e475f9dd" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/a805f528-38e1-4159-8be3-2f32f563c7e0" height = "400"></img>
-<img src = "https://github.com/Vedpatel28/quotes_app/assets/130833918/313fd322-d5d8-4d21-9c7d-09b8cb0b75ee" height = "400"></img>
 
 ### Project Objectives:
 
